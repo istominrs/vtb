@@ -1,0 +1,84 @@
+.vtb-cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.vtb-cookie-banner__inner {
+  pointer-events: auto;
+  margin: 16px;
+  max-width: 960px;
+  width: 100%;
+  border-radius: 18px;
+  background: rgba(11, 31, 59, 0.97);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vtb-cookie-banner__text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.vtb-cookie-banner__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.vtb-cookie-banner__button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 0;
+  background: #005bff;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 10px 24px rgba(0, 91, 255, 0.3);
+}
+
+.vtb-cookie-banner__button:hover {
+  background: #0045c0;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 91, 255, 0.4);
+}
+
+.vtb-cookie-banner__button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(0, 91, 255, 0.22);
+}
+
+.vtb-cookie-banner__button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .vtb-cookie-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vtb-cookie-banner__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+

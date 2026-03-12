@@ -1,0 +1,53 @@
+.vtb-trust {
+  padding: 72px 0;
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 80%);
+}
+
+.vtb-trust__container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.vtb-trust__title {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: #0b1f3b;
+  margin: 0 0 22px;
+}
+
+.vtb-trust__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.vtb-trust__item {
+  padding: 20px 22px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 59, 0.06);
+  box-shadow: 0 12px 26px rgba(11, 31, 59, 0.06);
+  color: rgba(11, 31, 59, 0.9);
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.4;
+  font-weight: 640;
+}
+
+@media (max-width: 720px) {
+  .vtb-trust {
+    padding: 56px 0;
+  }
+
+  .vtb-trust__container {
+    width: min(1100px, calc(100% - 32px));
+  }
+
+  .vtb-trust__list {
+    grid-template-columns: 1fr;
+  }
+}
+
