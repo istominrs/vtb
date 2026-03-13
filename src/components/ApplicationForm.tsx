@@ -1,5 +1,5 @@
 import "./ApplicationForm.css"
-import { Phone, Send, ShieldCheck, User } from "lucide-react"
+import { Phone, Send, User } from "lucide-react"
 
 function ApplicationForm() {
   return (
