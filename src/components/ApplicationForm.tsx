@@ -51,17 +51,16 @@ function ApplicationForm() {
           </div>
 
           <label className="vtb-application__consent">
-            <ShieldCheck className="vtb-application__consent-icon" aria-hidden="true" />
-            <input
-              className="vtb-application__checkbox"
-              type="checkbox"
-              name="consent"
-              required
-            />
-            <span className="vtb-application__consent-text">
-              Я согласен на обработку персональных данных
-            </span>
-          </label>
+          <input
+            className="vtb-application__checkbox"
+            type="checkbox"
+            name="consent"
+            required
+          />
+          <span className="vtb-application__consent-text">
+            Я согласен на обработку персональных данных
+          </span>
+        </label>
 
           <button className="vtb-application__submit" type="submit">
             <span>Отправить заявку</span>

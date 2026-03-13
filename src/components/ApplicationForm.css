@@ -53,6 +53,7 @@
   border: 2px solid rgba(11, 31, 59, 0.16);
   padding: 0 16px;
   background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .vtb-application__input-wrap:focus-within {
@@ -86,31 +87,88 @@
   outline: none;
 }
 
+/* --- Стилизация чекбокса --- */
+
 .vtb-application__consent {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 21px;
-  line-height: 1.45;
-  color: rgba(11, 31, 59, 0.8);
-}
-
-.vtb-application__consent-icon {
-  width: 22px;
-  height: 22px;
-  margin-top: 3px;
-  color: rgba(0, 91, 255, 0.9);
-  flex-shrink: 0;
-}
-
-.vtb-application__checkbox {
-  margin-top: 4px;
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  accent-color: #005bff;
+  align-items: center; /* Центрирует чекбокс и текст по одной линии */
+  gap: 12px;
   cursor: pointer;
+  margin: 10px 0;
+  user-select: none;
 }
+
+/* Прячем стандартный инпут, но оставляем доступным для клавиатуры */
+.vtb-application__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Кастомный квадрат чекбокса */
+.vtb-application__consent-text {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1.2;
+  color: rgba(11, 31, 59, 0.8);
+  position: relative;
+}
+
+.vtb-application__consent-text::before {
+  content: "";
+  flex-shrink: 0;
+  width: 32px; /* Увеличенный размер */
+  height: 32px;
+  background: #ffffff;
+  border: 2px solid rgba(11, 31, 59, 0.2);
+  border-radius: 10px;
+  margin-right: 14px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Рисуем белую галочку */
+.vtb-application__consent-text::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 6px;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Состояние: Наведение */
+.vtb-application__consent:hover .vtb-application__consent-text::before {
+  border-color: #005bff;
+}
+
+/* Состояние: Выбрано */
+.vtb-application__checkbox:checked + .vtb-application__consent-text::before {
+  background: #005bff;
+  border-color: #005bff;
+}
+
+.vtb-application__checkbox:checked + .vtb-application__consent-text::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Фокус с клавиатуры */
+.vtb-application__checkbox:focus-visible + .vtb-application__consent-text::before {
+  box-shadow: 0 0 0 3px rgba(0, 91, 255, 0.3);
+  border-color: #005bff;
+}
+
+/* --- Кнопка отправить --- */
 
 .vtb-application__submit {
   margin-top: 4px;
@@ -146,11 +204,6 @@
   box-shadow: 0 8px 18px rgba(0, 91, 255, 0.24);
 }
 
-.vtb-application__submit:focus-visible {
-  outline: 3px solid rgba(0, 91, 255, 0.35);
-  outline-offset: 2px;
-}
-
 @media (max-width: 720px) {
   .vtb-application {
     padding: 56px 0 64px;
@@ -163,5 +216,21 @@
   .vtb-application__form {
     padding: 18px 16px 20px;
   }
-}
 
+  .vtb-application__consent-text {
+    font-size: 16px;
+  }
+
+  .vtb-application__consent-text::before {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+  }
+
+  .vtb-application__consent-text::after {
+    left: 9px;
+    top: 5px;
+    width: 6px;
+    height: 11px;
+  }
+}

@@ -7,6 +7,7 @@ import HowTo from "./components/HowTo.tsx"
 import FinalOffer from "./components/FinalOffer.tsx"
 import ApplicationForm from "./components/ApplicationForm.tsx"
 import CookieBanner from "./components/CookieBanner.tsx"
+import Footer from "./components/Footer.tsx"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <FinalOffer />
       <ApplicationForm />
       <CookieBanner />
+      <Footer />
     </>
   )
 }

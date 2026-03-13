@@ -44,10 +44,6 @@ function ClientProblems() {
             <span className="vtb-problems__badge-text">Решаем ваши проблемы</span>
           </div>
           <h2 className="vtb-problems__title">Мы понимаем ваши сложности</h2>
-          <p className="vtb-problems__subtitle">
-            И предлагаем понятные решения для каждой из них, чтобы покупка автомобиля была
-            предсказуемой и комфортной.
-          </p>
         </div>
 
         <div className="vtb-problems__grid">
